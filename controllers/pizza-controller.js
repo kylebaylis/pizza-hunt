@@ -5,7 +5,7 @@ const pizzaController = {
     getAllPizza(req, res) {
         Pizza.find({})
             .populate({
-                path: 'comments',
+                path: 'comments', // this creates the comments field
                 select: '-__v' // don't want this returned because we don't care about the __v field
             })
             .select('-__v')
